@@ -1,4 +1,4 @@
-# Find the longest palindrome in a given string
+# Find the longest palindrome substring in a given string
 #Input: "banana"
 #Output: "anana"
 
