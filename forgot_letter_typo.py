@@ -29,6 +29,10 @@ class Solution:
 sol = Solution(words)
 
 print(sol.find('cat'))
+# True, []
 print(sol.find('at'))
+# False, ['cat', 'rat']
 print(sol.find('buld'))
+# False, ['build']
 print(sol.find('gvuyvuy'))
+# False, []
