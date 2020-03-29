@@ -13,7 +13,7 @@
 #Input: "({[)]"
 #Output: False
 
-class Solution: # O(n) there might be faster solution, but I didn't found
+class Solution: # O(n) there might be faster solution, but I didn't find
   def __init__(self):
     self.opening_from_closing = {')': '(', ']': '[', '}': '{'}
     self.openings = set(['(', '{', '['])
