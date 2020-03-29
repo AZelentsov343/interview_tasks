@@ -20,6 +20,7 @@ class Solution1: #O(n) easy way
         left = i
       elif left != -1 and right == -1 and el != target:
         right = i - 1
+        break
     if left != -1 and right == -1:
       right = len(arr) - 1
     return [left, right]
