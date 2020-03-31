@@ -9,9 +9,16 @@ def sortNums(nums): # O(n) time O(1) space
   counts = [0] * 3
   for num in nums:
     counts[num-1] += 1
-  nums[:counts[0]:] = [1] * counts[0]
-  nums[counts[0]:counts[0]+counts[1]:] = [2] * counts[1]
-  nums[counts[0]+counts[1]:] = [3] * counts[2]
+  i = 0
+  while i < counts[0]:
+    nums[i] = 1
+    i += 1
+  while i < counts[0] + counts[1]:
+    nums[i] = 2
+    i += 1
+  while i < len(nums):
+    nums[i] = 3
+    i += 1
 
 nums = [3, 3, 2, 1, 3, 2, 1]
 sortNums(nums)
