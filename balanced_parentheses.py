@@ -23,6 +23,8 @@ class Solution: # O(n) there might be faster solution, but I didn't find
       if ch in self.openings:
         stack.append(ch)
       else: #can use else because string contains nothing but openings and closings
+        if len(stack) == 0:
+          return False
         if stack[-1] == self.opening_from_closing[ch]:
           stack.pop()
         else:
