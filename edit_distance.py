@@ -39,10 +39,16 @@ def distance2(s1, s2): #O(n * m) time O(n * m) memory
 def distance3(s1, s2): #O(n * m) time O(m) memory cause we can store only 2
   n = len(s1)
   m = len(s2)
+  
+  if n == 0:
+    return m
+  
+  if m == 0:
+    return n
 
   distances = [[j, 0] for j in range(m + 1)]
 
-  for i in range(n + 1):
+  for i in range(1, n + 1):
     for j in range(m + 1):
       if j == 0:
         distances[j][i % 2] = i
