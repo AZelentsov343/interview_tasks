@@ -35,7 +35,7 @@ def intersection1(a, b): #O(n + m + max(n, m)) time, O(1) memory
   d = len_b - len_a
   for i in range(d):
     b = b.next
-  while a.val != b.val:
+  while a and b and a != b:
     a = a.next
     b = b.next
   return a
