@@ -28,7 +28,7 @@ class Solution1: #O(n) easy way
 
 class Solution2: #O(log(n)) efficient way
   def find_left(self, arr, target, low, high):
-    if low == high and arr[low] != target:
+    if low >= high and arr[low] != target:
       return -1
     mid = low + (high - low) // 2
     if (mid == 0 or arr[mid - 1] < target) and arr[mid] == target:
@@ -39,7 +39,7 @@ class Solution2: #O(log(n)) efficient way
       return self.find_left(arr, target, low, mid-1)
   
   def find_right(self, arr, target, low, high):
-    if low == high and arr[high] != target:
+    if low >= high and arr[high] != target:
       return -1
     mid = low + (high - low) // 2
     if (mid == len(arr) - 1 or target < arr[mid+1]) and arr[mid] == target:
@@ -51,6 +51,8 @@ class Solution2: #O(log(n)) efficient way
   
   def getRange(self, arr, target):
     n = len(arr) - 1
+    if n == -1:
+      return [-1, -1]
     return [self.find_left(arr, target, 0, n), self.find_right(arr, target, 0, n)]
 
 
