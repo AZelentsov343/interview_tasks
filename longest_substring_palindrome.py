@@ -87,6 +87,8 @@ class Solution3: #O(n) Manacher
 
   
   def longestPalindrome(self, s):
+    if len(s) == 0:
+      return ""
     odd_max, odd_num = self.odd_substr(s)
     even_max, even_num = self.even_substr(s)
     if odd_max >= even_max:
