@@ -1,6 +1,3 @@
-#Hi, here's your problem today. This problem was recently asked by
-#AirBNB:
-
 #Given two strings A and B of lowercase letters, return true if and
 #only if we can swap two letters in A so that the result equals B.
 
