@@ -24,9 +24,8 @@ def next_seq(a):
   l = 1
   for i in range(1, len(a)):
     if a[i] != prev:
-      res += str(l)
+      res += str(l) + prev
       l = 1
-      res += prev
       prev = a[i]
     else:
       l += 1
