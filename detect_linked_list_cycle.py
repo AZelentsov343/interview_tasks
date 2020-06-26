@@ -14,18 +14,17 @@ class ListNode(object):
     self.next = None
 
 class Solution(object):
-  def hasCycle(self, head):
+  def hasCycle(self, head): # O(n) time, O(1) memory
     if head is None:
       return False
-    s = set()
-    p = head
-    while True:
-      if p in s:
+    hare = head
+    tortoise = head
+    while (hare and tortoise and hare.next):
+      hare = hare.next.next
+      tortoise = tortoise.next
+      if hare == tortoise:
         return True
-      s.add(p)
-      p = p.next
-      if p is None:
-        return False
+    return False
 
 testHead = ListNode(4)
 node1 = ListNode(3)
